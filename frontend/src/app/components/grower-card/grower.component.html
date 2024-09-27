@@ -1,0 +1,76 @@
+<div class="grower-card">
+  <div class="grower-card-information">
+    <h2>{{ name.toUpperCase() }}</h2>
+    <p>Endereço: {{ address }}</p>
+    <p>Email: {{ email }}</p>
+    <p>Telefone: {{ phone }}</p>
+    <p>Especialidade: {{ specialty }}</p>
+  </div>
+  <div class="grower-card-buttons">
+    <button (click)="onEdit()" class="edit-button">Edit</button>
+    <button (click)="onDelete()" class="delete-button">Delete</button>
+  </div>
+</div>
+
+<div *ngIf="isEditing" class="modal" (click)="onModalClick($event)">
+  <div class="modal-content">
+    <span class="close" (click)="cancelEdit()">&times;</span>
+    <form (ngSubmit)="onUpdate()" #editForm="ngForm" class="edit-form">
+      <div>
+        <label for="name">Nome:</label>
+        <input
+          type="text"
+          id="name"
+          required
+          [(ngModel)]="editGrower.name"
+          name="name"
+        />
+      </div>
+      <div>
+        <label for="address">Endereço:</label>
+        <input
+          type="text"
+          id="address"
+          required
+          [(ngModel)]="editGrower.address"
+          name="address"
+        />
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          required
+          [(ngModel)]="editGrower.email"
+          name="email"
+        />
+      </div>
+      <div>
+        <label for="phone">Telefone:</label>
+        <input
+          type="tel"
+          id="phone"
+          required
+          [mask]="'(00) 00000-0000'"
+          [(ngModel)]="editGrower.phone"
+          name="phone"
+        />
+        
+      </div>
+      <div>
+        <label for="specialty">Especialidade:</label>
+        <input
+          type="text"
+          id="specialty"
+          required
+          [(ngModel)]="editGrower.specialty"
+          name="specialty"
+        />
+      </div>
+      <button class="update-grower-button" type="submit" [disabled]="!editForm.form.valid">
+        Atualizar produtor
+      </button>
+    </form>
+  </div>
+</div>

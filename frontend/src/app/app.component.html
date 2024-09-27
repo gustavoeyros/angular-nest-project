@@ -1,0 +1,23 @@
+<div class="main">
+  <div class="header">
+    <h1>{{ componentTitle }}</h1>
+    <app-grower-form (growerAdded)="fetchGrowers()"></app-grower-form>
+  </div>
+  <ul class="grower-card-container">
+    <li *ngFor="let grower of growers">
+      <app-grower-card
+        [id]="grower.id"
+        [name]="grower.name"
+        [address]="grower.address"
+        [email]="grower.email"
+        [phone]="grower.phone"
+        [specialty]="grower.specialty"
+        (growerDeleted)="fetchGrowers()"
+        (growerUpdated)="fetchGrowers()"
+      >
+      </app-grower-card>
+    </li>
+  </ul>
+</div>
+
+<router-outlet></router-outlet>

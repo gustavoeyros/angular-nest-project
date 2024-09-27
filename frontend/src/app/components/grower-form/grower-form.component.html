@@ -1,0 +1,63 @@
+<button class="add-grower-button" (click)="openModal()">Adicionar produtor</button>
+
+<div *ngIf="isModalOpen" class="modal" (click)="onModalClick($event)">
+  <div class="modal-content">
+    <span class="close" (click)="closeModal()">&times;</span>
+    <form (ngSubmit)="onSubmit()" #growerForm="ngForm" class="grower-form">
+      <div>
+        <label for="name">Nome:</label>
+        <input
+          type="text"
+          id="name"
+          required
+          [(ngModel)]="grower.name"
+          name="name"
+        />
+      </div>
+      <div>
+        <label for="address">Endereço:</label>
+        <input
+          type="text"
+          id="address"
+          required
+          [(ngModel)]="grower.address"
+          name="address"
+        />
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          required
+          [(ngModel)]="grower.email"
+          name="email"
+        />
+      </div>
+      <div>
+        <label for="phone">Telefone:</label>
+        <input
+          type="tel"
+          [mask]="'(00) 00000-0000'"
+          id="phone"
+          required
+          [(ngModel)]="grower.phone"
+          name="phone"
+        />
+      </div>
+      <div>
+        <label for="specialty">Especialidade:</label>
+        <input
+          type="text"
+          id="specialty"
+          required
+          [(ngModel)]="grower.specialty"
+          name="specialty"
+        />
+      </div>
+      <button class="add-grower-intern-button" type="submit" [disabled]="!growerForm.form.valid">
+        Adicionar produtor
+      </button>
+    </form>
+  </div>
+</div>

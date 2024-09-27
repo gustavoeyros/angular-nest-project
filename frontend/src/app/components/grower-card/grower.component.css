@@ -1,0 +1,122 @@
+.grower-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 250px;
+  height: 250px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #796af1;
+
+  h2 {
+    color: white;
+  }
+  p {
+    color: white;
+  }
+}
+
+.grower-card-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+.edit-button {
+  background-color: #4caf50;
+  color: white;
+}
+
+.delete-button {
+  background-color: #f44336;
+  color: white;
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+
+  div {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.edit-form label {
+  margin-bottom: 5px;
+}
+
+.edit-form input {
+  padding: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.edit-form button {
+  align-self: flex-start;
+}
+
+.grower-card-information {
+  h2 {
+    text-align: center;
+  }
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 10px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.update-grower-button {
+  background-color: #796af1;
+  width: 100%;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
